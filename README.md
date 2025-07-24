@@ -1,5 +1,7 @@
 # 🪂 Paragliding Quiz
 
+[Try it now!](https://piochelepiotr.github.io/paragliding-quiz/)
+
 An interactive quiz application for paragliding students based on the USHPA Pilot Proficiency Program questions. The quiz features adaptive questioning that focuses more on questions you've struggled with while still reviewing previously answered questions.
 
 ## Features
