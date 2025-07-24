@@ -854,7 +854,7 @@ const additionalQuestions = [
 const allQuestions = [...quizData, ...additionalQuestions];
 
 // Quiz state
-let currentQuestionIndex = 0;
+let currentQuestion = null;
 let selectedAnswers = [];
 let questionHistory = [];
 let stats = {
@@ -930,6 +930,7 @@ function updateDisplay() {
 
 // Display question
 function displayQuestion(question) {
+    currentQuestion = question;
     document.getElementById('questionNumber').textContent = `Question ${question.id}`;
     document.getElementById('questionText').textContent = question.question;
     document.getElementById('questionType').textContent = 
@@ -1022,21 +1023,20 @@ function showFeedback(question, isCorrect, selectedAnswers) {
 
 // Submit answer
 function submitAnswer() {
-    const question = getNextQuestion();
-    const isCorrect = checkAnswer(question, selectedAnswers);
+    const isCorrect = checkAnswer(currentQuestion, selectedAnswers);
     
     // Update stats
     stats.totalAnswered++;
     if (isCorrect) stats.correctAnswers++;
     
-    const qStats = stats.questionStats[question.id];
+    const qStats = stats.questionStats[currentQuestion.id];
     qStats.attempts++;
     if (isCorrect) qStats.correct++;
     qStats.lastSeen = Date.now();
     
     saveStats();
     updateDisplay();
-    showFeedback(question, isCorrect, selectedAnswers);
+    showFeedback(currentQuestion, isCorrect, selectedAnswers);
 }
 
 // Next question
