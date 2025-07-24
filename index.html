@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragliding Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🪂 Paragliding Quiz</h1>
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-label">Questions Answered</span>
+                    <span class="stat-value" id="questionsAnswered">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Correct</span>
+                    <span class="stat-value" id="correctAnswers">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Accuracy</span>
+                    <span class="stat-value" id="accuracy">0%</span>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div id="quiz-container" class="quiz-container">
+                <div class="question-header">
+                    <h2 id="questionNumber">Question 1</h2>
+                    <div class="question-type" id="questionType">Single Choice</div>
+                </div>
+                
+                <div class="question-content">
+                    <p id="questionText">Loading question...</p>
+                </div>
+
+                <div class="options-container" id="optionsContainer">
+                    <!-- Options will be populated here -->
+                </div>
+
+                <div class="button-container">
+                    <button id="submitBtn" class="btn btn-primary" disabled>Submit Answer</button>
+                    <button id="nextBtn" class="btn btn-secondary" style="display: none;">Next Question</button>
+                </div>
+
+                <div id="feedback" class="feedback" style="display: none;">
+                    <!-- Feedback will be shown here -->
+                </div>
+            </div>
+
+            <div id="results-container" class="results-container" style="display: none;">
+                <h2>Quiz Results</h2>
+                <div class="results-stats">
+                    <div class="result-stat">
+                        <span class="result-label">Total Questions</span>
+                        <span class="result-value" id="totalQuestions">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="result-label">Correct Answers</span>
+                        <span class="result-value" id="totalCorrect">0</span>
+                    </div>
+                    <div class="result-stat">
+                        <span class="result-label">Accuracy</span>
+                        <span class="result-value" id="totalAccuracy">0%</span>
+                    </div>
+                </div>
+                <button id="restartBtn" class="btn btn-primary">Start New Quiz</button>
+            </div>
+        </main>
+
+        <footer>
+            <p>Based on USHPA Pilot Proficiency Program questions</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
