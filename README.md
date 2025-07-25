@@ -4,7 +4,7 @@
 
 An interactive quiz application for paragliding students based on the USHPA Pilot Proficiency Program questions. The quiz features adaptive questioning that focuses more on questions you've struggled with while still reviewing previously answered questions.
 
-## Note on answers
+## Answers are not absolute truth
 
 Although Cursor was very good at doing the website (nearly no manual changes required) it was far worse at answering the questions. So the answers are mine and maybe not all correct. If you see errors, let me know and I will fix them!
 
