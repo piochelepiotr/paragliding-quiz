@@ -239,8 +239,8 @@ const additionalQuestions = [
             "More brake application",
             "A steeper slope"
         ],
-        correct: [1, 2],
-        explanation: "High wind launches require both a higher angle of attack and specific high wind launch skills."
+        correct: [1],
+        explanation: "High wind launches require a higher angle of attack."
     },
     {
         id: 20,
@@ -359,8 +359,8 @@ const additionalQuestions = [
             "In a spiral, both sides of the glider are flying in a positive (forward) direction",
             "Altitude loss is usually higher in a spin"
         ],
-        correct: [1, 2, 3],
-        explanation: "In a spin, one wing is stalled rotating backward; in a spiral, both wings are flying forward. Altitude loss is usually higher in a spin."
+        correct: [1, 2],
+        explanation: "In a spin, one wing is stalled rotating backward; in a spiral, both wings are flying forward. Altitude loss is not necessarily higher in a spin."
     },
     {
         id: 29,
@@ -490,15 +490,15 @@ const additionalQuestions = [
     {
         id: 39,
         question: "You are on final landing approach 30 feet in the air and notice the wind has switched and you are now in a 4 mph tailwind. What should you do?",
-        type: "single",
+        type: "multiple",
         options: [
             "Make a quick 180 degree turn in order to face into the wind",
             "Fly at trim and be ready for an aggressive flare to land",
             "Pump your brakes up and down to come in slower",
             "Get upright in your harness and after flaring hard to minimize ground speed, run fast or skid to a stop if terrain allows while trying to avoid landing on the harness"
         ],
-        correct: [3],
-        explanation: "Tailwind landings require aggressive flare and ground speed management."
+        correct: [1, 3],
+        explanation: "Tailwind landings require aggressive flare and ground speed management. Both flying at trim and being ready for an aggressive flare, and getting upright and running/skidding to a stop, are appropriate responses."
     },
     {
         id: 40,
@@ -562,8 +562,8 @@ const additionalQuestions = [
             "Make an educated guess based on the wind direction at launch",
             "If there is a body of water near the LZ, looking at the water, the wind shadow will be at the upwind end. This will help you assess the wind direction"
         ],
-        correct: [0, 3],
-        explanation: "360-degree turns and observing water surfaces are practical methods to determine wind direction when no indicators are available."
+        correct: [0, 2, 3],
+        explanation: "360-degree turns, making an educated guess based on launch wind, and observing water surfaces are practical methods to determine wind direction when no indicators are available. Spitting is less reliable."
     },
     {
         id: 45,
