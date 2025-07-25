@@ -291,8 +291,8 @@ const additionalQuestions = [
             "Stall can happen inadvertently and brake position has no bearing on stall likelihood",
             "A paraglider will only stall when the glider is way behind the pilot and the pilot feels as though he/she has been swung on his/her back"
         ],
-        correct: [2],
-        explanation: "Stalls can happen inadvertently and brake position has no bearing on stall likelihood."
+        correct: [0, 1],
+        explanation: "Deep brake positions can lead to stalls, and stalls can happen inadvertently."
     },
     {
         id: 24,
