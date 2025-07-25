@@ -84,8 +84,8 @@ const quizData = [
             "The first pilot in the thermal determines the direction of circling",
             "The higher pilot has the right of way"
         ],
-        correct: [1, 2, 3],
-        explanation: "All pilots should circle the same direction, with the first pilot determining direction and higher pilots having right of way."
+        correct: [1, 2],
+        explanation: "All pilots should circle the same direction, with the first pilot determining direction. The lower pilot has the right of way, not the higher pilot."
     },
     {
         id: 8,
