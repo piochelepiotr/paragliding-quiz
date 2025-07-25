@@ -175,8 +175,8 @@ const additionalQuestions = [
             "The pilot in flying gear including the harness weight; the wing is not included",
             "The total weight of the pilot, plus all gear and the wing"
         ],
-        correct: [1],
-        explanation: "EN weight range includes pilot and gear but not the wing weight."
+        correct: [2],
+        explanation: "EN weight range includes the total weight of the pilot, plus all gear and the wing."
     },
     {
         id: 15,
@@ -252,8 +252,8 @@ const additionalQuestions = [
             "45 degrees",
             "No crosswind at all"
         ],
-        correct: [1],
-        explanation: "USHPA recommends novice pilots limit crosswind launches to 25 degrees."
+        correct: [0],
+        explanation: "USHPA recommends novice pilots limit crosswind launches to 10 degrees."
     },
     {
         id: 21,
@@ -278,8 +278,8 @@ const additionalQuestions = [
             "At trim speed",
             "At faster than trim speed"
         ],
-        correct: [2],
-        explanation: "Flying faster than trim speed maximizes ground speed and chances of reaching the landing area in a tailwind."
+        correct: [1],
+        explanation: "Flying at trim speed maximizes glide distance when trying to reach the landing area in a tailwind."
     },
     {
         id: 23,
@@ -600,8 +600,8 @@ const additionalQuestions = [
             "Fly with speed bar as appropriate to position yourself further away from the ridge and lift band",
             "Consider heading to a landing area if the winds are increasing"
         ],
-        correct: [1, 2, 3],
-        explanation: "When ridge soaring with poor penetration, use techniques to get below the lift band and consider landing if conditions worsen."
+        correct: [2, 3],
+        explanation: "When ridge soaring with poor penetration, use speed bar to position away from the ridge and consider landing if conditions worsen."
     },
     {
         id: 48,
