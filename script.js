@@ -239,8 +239,8 @@ const additionalQuestions = [
             "More brake application",
             "A steeper slope"
         ],
-        correct: [2],
-        explanation: "High wind launches require specific skills, not just more airspeed or brake application."
+        correct: [1, 2],
+        explanation: "High wind launches require both a higher angle of attack and specific high wind launch skills."
     },
     {
         id: 20,
@@ -278,8 +278,8 @@ const additionalQuestions = [
             "At trim speed",
             "At faster than trim speed"
         ],
-        correct: [1],
-        explanation: "Flying at trim speed maximizes glide distance when trying to reach the landing area in a tailwind."
+        correct: [0],
+        explanation: "Flying slower than trim speed maximizes glide distance when trying to reach the landing area in a tailwind."
     },
     {
         id: 23,
@@ -291,8 +291,8 @@ const additionalQuestions = [
             "Stall can happen inadvertently and brake position has no bearing on stall likelihood",
             "A paraglider will only stall when the glider is way behind the pilot and the pilot feels as though he/she has been swung on his/her back"
         ],
-        correct: [0, 1, 2],
-        explanation: "Deep brake positions can lead to stalls, and stalls can happen inadvertently."
+        correct: [2],
+        explanation: "Stalls can happen inadvertently and brake position has no bearing on stall likelihood."
     },
     {
         id: 24,
@@ -723,7 +723,7 @@ const additionalQuestions = [
             "3 statute miles visibility, remaining 50 feet below, 100 feet above, and 200 feet horizontally away from clouds",
             "3 statute miles visibility, remaining 500 feet below, 1000 feet above, and 2000 feet horizontally away from clouds"
         ],
-        correct: [2],
+        correct: [3],
         explanation: "These are the minimum requirements for Class E airspace below 10,000 feet MSL."
     },
     {
@@ -857,6 +857,8 @@ const allQuestions = [...quizData, ...additionalQuestions];
 let currentQuestion = null;
 let selectedAnswers = [];
 let questionHistory = [];
+let isSequentialMode = false;
+let currentSequentialIndex = 0;
 let stats = {
     totalAnswered: 0,
     correctAnswers: 0,
@@ -889,8 +891,17 @@ function initializeQuestionStats() {
     });
 }
 
-// Get next question using adaptive algorithm
+// Get next question using adaptive algorithm or sequential mode
 function getNextQuestion() {
+    if (isSequentialMode) {
+        // Sequential mode: go through questions in order
+        if (currentSequentialIndex >= allQuestions.length) {
+            currentSequentialIndex = 0; // Loop back to start
+        }
+        return allQuestions[currentSequentialIndex];
+    }
+    
+    // Adaptive mode: original algorithm
     const now = Date.now();
     const questions = allQuestions.map(q => {
         const qStats = stats.questionStats[q.id];
@@ -1041,12 +1052,34 @@ function submitAnswer() {
 
 // Next question
 function nextQuestion() {
+    if (isSequentialMode) {
+        currentSequentialIndex++;
+    }
     const question = getNextQuestion();
     displayQuestion(question);
     
     document.getElementById('feedback').style.display = 'none';
     document.getElementById('submitBtn').style.display = 'inline-block';
     document.getElementById('nextBtn').style.display = 'none';
+}
+
+// Toggle between adaptive and sequential modes
+function toggleMode() {
+    isSequentialMode = !isSequentialMode;
+    currentSequentialIndex = 0;
+    
+    const modeToggle = document.getElementById('modeToggle');
+    if (isSequentialMode) {
+        modeToggle.textContent = 'Switch to Adaptive Mode';
+        modeToggle.className = 'btn btn-primary';
+    } else {
+        modeToggle.textContent = 'Switch to Sequential Mode';
+        modeToggle.className = 'btn btn-secondary';
+    }
+    
+    // Load first question in new mode
+    const question = getNextQuestion();
+    displayQuestion(question);
 }
 
 // Event listeners
@@ -1060,4 +1093,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.getElementById('submitBtn').addEventListener('click', submitAnswer);
     document.getElementById('nextBtn').addEventListener('click', nextQuestion);
+    document.getElementById('modeToggle').addEventListener('click', toggleMode);
 }); 

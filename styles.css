@@ -38,6 +38,16 @@ header h1 {
     margin-bottom: 20px;
 }
 
+.mode-toggle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mode-toggle .btn {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+}
+
 .stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
