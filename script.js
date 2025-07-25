@@ -967,13 +967,13 @@ function displayQuestion(question) {
         optionDiv.appendChild(input);
         optionDiv.appendChild(label);
         
-        // Add click handler
-        optionDiv.addEventListener('click', () => {
+        // Add change handler to input
+        input.addEventListener('change', () => {
             if (question.type === 'single') {
-                document.querySelectorAll('input[name="answer"]').forEach(inp => inp.checked = false);
-                input.checked = true;
-            } else {
-                input.checked = !input.checked;
+                // Uncheck all other radios
+                document.querySelectorAll('input[name="answer"]').forEach(inp => {
+                    if (inp !== input) inp.checked = false;
+                });
             }
             updateSelectedAnswers();
         });
