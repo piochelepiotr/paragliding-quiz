@@ -1063,6 +1063,39 @@ function nextQuestion() {
     document.getElementById('nextBtn').style.display = 'none';
 }
 
+// Reset all scores and statistics
+function resetScore() {
+    if (confirm('Are you sure you want to reset all scores and statistics? This cannot be undone.')) {
+        // Reset stats
+        stats = {
+            totalAnswered: 0,
+            correctAnswers: 0,
+            questionStats: {}
+        };
+        
+        // Reset sequential mode index
+        currentSequentialIndex = 0;
+        
+        // Initialize question stats
+        initializeQuestionStats();
+        
+        // Save reset stats
+        saveStats();
+        
+        // Update display
+        updateDisplay();
+        
+        // Load first question
+        const question = getNextQuestion();
+        displayQuestion(question);
+        
+        // Clear any feedback
+        document.getElementById('feedback').style.display = 'none';
+        document.getElementById('submitBtn').style.display = 'inline-block';
+        document.getElementById('nextBtn').style.display = 'none';
+    }
+}
+
 // Toggle between adaptive and sequential modes
 function toggleMode() {
     isSequentialMode = !isSequentialMode;
@@ -1094,4 +1127,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('submitBtn').addEventListener('click', submitAnswer);
     document.getElementById('nextBtn').addEventListener('click', nextQuestion);
     document.getElementById('modeToggle').addEventListener('click', toggleMode);
+    document.getElementById('resetBtn').addEventListener('click', resetScore);
 }); 
