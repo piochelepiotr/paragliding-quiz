@@ -4,6 +4,16 @@
 
 An interactive quiz application for paragliding students based on the USHPA Pilot Proficiency Program questions. The quiz features adaptive questioning that focuses more on questions you've struggled with while still reviewing previously answered questions.
 
+## Note on answers
+
+Although Cursor was very good at doing the website (nearly no manual changes required) it was far worse at answering the questions. So the answers are mine and maybe not all correct. If you see errors, let me know and I will fix them!
+
+Here is ChatGPT explaining why the wind shadow is downwind of the lake:
+<img width="852" height="847" alt="image" src="https://github.com/user-attachments/assets/2d2f68b2-9062-487d-ba40-b6342cc3460a" />
+
+So yes, I guess we no longer need coders, but still need paraglider instructors :D
+
+
 ## Features
 
 - **Adaptive Learning**: Questions you've answered incorrectly appear more frequently
