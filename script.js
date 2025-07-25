@@ -71,8 +71,8 @@ const quizData = [
             "You should alter course to the right",
             "Right of way rules are the best guideline but all situations are unique and not all pilots honor the rules in all situations; be flexible when the situation dictates"
         ],
-        correct: [2, 3, 4],
-        explanation: "The wing closer to the hill has right of way, and you should alter course to the right. However, be flexible as situations vary."
+        correct: [1, 3, 4],
+        explanation: "The other glider has right of way (they may not be able to alter course to their right), you should alter course to the right, and be flexible as situations vary."
     },
     {
         id: 7,
@@ -192,7 +192,7 @@ const additionalQuestions = [
     },
     {
         id: 16,
-        question: "Same situation as above, but you have verified that the wind in the landing area is in the same direction as the wind on launch. Which of the following is true?",
+        question: "You are launching from halfway up the mountain, and you have checked that the wind in the landing area is blowing in the same direction as the wind at your launch. Which of the following is true?",
         type: "multiple",
         options: [
             "The wind at the top of the hill may be in the opposite direction",
@@ -332,8 +332,8 @@ const additionalQuestions = [
             "Travel a shorter distance and be in the air a shorter amount of time",
             "No way to determine"
         ],
-        correct: [1],
-        explanation: "Flying with full speed bar increases ground speed but reduces time aloft due to higher sink rate."
+        correct: [3],
+        explanation: "Trim speed gives the best glide ratio. Using speed bar reduces glide distance and time aloft due to higher sink rate."
     },
     {
         id: 27,
@@ -562,8 +562,8 @@ const additionalQuestions = [
             "Make an educated guess based on the wind direction at launch",
             "If there is a body of water near the LZ, looking at the water, the wind shadow will be at the upwind end. This will help you assess the wind direction"
         ],
-        correct: [0, 1, 3],
-        explanation: "Multiple methods can be used to determine wind direction when no indicators are available."
+        correct: [0, 3],
+        explanation: "360-degree turns and observing water surfaces are practical methods to determine wind direction when no indicators are available."
     },
     {
         id: 45,
@@ -710,8 +710,8 @@ const additionalQuestions = [
             "Two thick magenta solid concentric circles, with a vertical limit given in hundreds of feet MSL, usually 20 nautical miles in diameter",
             "Several thick blue solid concentric circles, with a vertical limit given in hundreds of feet MSL, associated with a thin solid magenta circle (Mode C transponder veil) usually 60 nautical miles in diameter"
         ],
-        correct: [1],
-        explanation: "Class D airspace is depicted as a magenta dashed circle on aeronautical charts."
+        correct: [0],
+        explanation: "Class D airspace is depicted as a blue dashed circle on aeronautical charts."
     },
     {
         id: 57,
