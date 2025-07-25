@@ -977,6 +977,12 @@ function displayQuestion(question) {
             }
             updateSelectedAnswers();
         });
+        // Make the entire option div clickable
+        optionDiv.addEventListener('click', (e) => {
+            if (e.target !== input && e.target !== label) {
+                input.click();
+            }
+        });
         
         optionsContainer.appendChild(optionDiv);
     });
